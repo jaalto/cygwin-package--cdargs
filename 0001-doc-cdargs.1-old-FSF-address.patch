@@ -1,0 +1,24 @@
+From 6baca74113cfa1b8cc426e1cca37e38223461cdc Mon Sep 17 00:00:00 2001
+From: Jari Aalto <jari.aalto@cante.net>
+Date: Tue, 11 Mar 2008 10:47:59 +0200
+Subject: [PATCH] doc/cdargs.1: old FSF address
+
+---
+ doc/cdargs.1 |    4 ++--
+ 1 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/doc/cdargs.1 b/doc/cdargs.1
+index 241aec9..2845109 100644
+--- a/doc/cdargs.1
++++ b/doc/cdargs.1
+@@ -344,5 +344,5 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ 
+ You should have received a copy of the GNU General Public License
+-along with this program; if not, write to the Free Software
+-Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
++along with this program. If not, see <http://www.gnu.org/licenses/>.
++
+-- 
+1.5.3.8
+

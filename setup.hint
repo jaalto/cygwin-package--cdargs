@@ -1,0 +1,6 @@
+sdesc: "Bookmarks and browsing for the cd command"
+ldesc: "A little tool for the console which enables bookmarks and browsing in
+your shell builtin cd command. Includes Bourne-shell, t?csh and
+Emacs setup files."
+category: Utils
+requires: cygwin bash libncurses8

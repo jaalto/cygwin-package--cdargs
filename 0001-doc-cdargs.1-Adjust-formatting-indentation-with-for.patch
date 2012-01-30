@@ -1,0 +1,141 @@
+From f8c01daac1f50e86eaeb5767c2e2e66d6bbef622 Mon Sep 17 00:00:00 2001
+From: Jari Aalto <jari.aalto@cante.net>
+Date: Mon, 10 Mar 2008 23:39:06 +0200
+Subject: [PATCH] doc/cdargs.1: Adjust formatting indentation with formatting codes
+
+---
+ doc/cdargs.1 |   55 ++++++++++++++++++++++++++++++++++---------------------
+ 1 files changed, 34 insertions(+), 21 deletions(-)
+
+diff --git a/doc/cdargs.1 b/doc/cdargs.1
+index 0de807d..241aec9 100644
+--- a/doc/cdargs.1
++++ b/doc/cdargs.1
+@@ -6,13 +6,13 @@ cdargs \- bookmarks and browser for cd shell built-in
+ [\fIOPTIONS\fR]
+ .br
+ .br
+-.B "function cv () { "
++.B "function cdb () { "
+ .br
+ .B "    cdargs ""$1"" && cd ""`cat ""$HOME/.cdargsresult""`"" ;"
+ .br
+ .B "}"
+ .br
+-.B cv 
++.B cdb
+ [\fINeedle\fR]
+ .br
+ .SH DESCRIPTION
+@@ -38,20 +38,26 @@ quit.
+ To be able to actually use this program together with the shell
+ built-in "cd" command you must use a little trick by defining a shell
+ function. Of course the syntax for this is different between the 
+-\fIcsh\fR-like shells (like \fItcsh\fR) and the \fIsh\fR-like shells
++\fIcsh\fR\-like shells (like \fItcsh\fR) and the \fIsh\fR\-like shells
+ (like \fIbash\fR).
+ .PP
+-For \fIsh\fR-like shells:
++For \fIsh\fR\-like shells:
++.RS
++.PP
+ .br
+-function cv () {
++function cdb () {
+ .br
+     cdargs "$1" && cd "`cat "$HOME/.cdargsresult"`" ;
+ .br
+ }
++.RE
++.PP
++For \fIcsh\fR\-like shells:
++.RS
+ .PP
+-For \fIcsh\fR-like shells:
+ .br
+-alias cv 'cdargs \\!* && cd `cat $HOME/.cdargsresult`'
++alias cdb 'cdargs \\!* && cd `cat $HOME/.cdargsresult`'
++.RE
+ .PP
+ Now you only have to put the 
+ .I cdargs
+@@ -65,7 +71,7 @@ scrolling behavior. See section SHELL FUNCTIONS below.
+ Since version 1.19 cdargs brings a collection of bash functions (and
+ since 1.20 tcsh aliases, too) with it. You only have to source this
+ in your ~/.profile or ~/.bashrc (or ~/.tcsh) and you get nice kinds of
+-magic prepared (completion...). Please read the cdargs-bash.sh or
++magic prepared (completion...). Please read the cdargs-*.sh or
+ cdargs-tcsh.csh respectively for the documentation of these functions.
+ 
+ .SH COMMAND-LINE OPTIONS
+@@ -219,33 +225,40 @@ and down.
+ In addition to the shell function mentioned above you might wish to
+ add other commands to your function. One example is to echo the
+ directory you changed to:
+-
+-function cv () {
++.PP
++.RS
++function cdb () {
+ .br
+     cdargs "$1" && cd "`cat "$HOME/.cdargsresult"`" 
+                 && pwd;
+ .br
+ }
+-
++.RE
++.PP
+ Or you can remove the file in which 
+ .I cdargs
+ reports it's result:
+ 
+-function cv () {
++.PP
++.RS
++function cdb () {
+ .br
+     cdargs "$1" && cd "`cat "$HOME/.cdargsresult"`" 
+                 && rm -f "$HOME/.cdargsresult";
+ .br
+ }
+-
++.RE
++.PP
+ Since version 1.19 cdargs comes with a file of preset functions for
+-bash: see cdargs-bash.sh in the distribution. From now on you
+-only have to source that file if you are using a \fIsh\fR-like shell.
++bash: see cdargs-*.sh in the distribution. From now on you
++only have to source that file if you are using a \fIsh\fR\-like shell.
+ Then you can use the shell completion to switch directories even
+ faster by typing
+-
+-cv [TAB]
+-
++.PP
++.RS
++cdb <TAB>
++.RE
++.PP
+ Since version 1.20 cdargs comes with a file of rudimentary aliases
+ (and completion) for the \fItcsh\fR.
+ .br
+@@ -290,13 +303,13 @@ personal bookmarks file.
+ .I "$HOME/.cdargsresult"
+ temporary file for passing results to shell.
+ .TP
+-.I "contrib/cdargs-bash.sh"
++.I "/usr/share/cdargs/cdargs*sh"
+ example collection of bash functions.
+ .TP
+-.I "contrib/cdargs-tcsh.csh"
++.I "/usr/share/cdargs/cdargs-tcsh.csh"
+ example collection of tcsh functions.
+ .TP
+-.I "contrib/cdargs.el"
++.I "/usr/share/emacs/site-lisp/cdargs.el"
+ (X)Emacs front-end to personal bookmarks file
+ 
+ .SH "REPORTING BUGS"
+-- 
+1.5.3.8
+

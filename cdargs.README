@@ -1,0 +1,103 @@
+cdargs
+------------------------------------------
+
+Bookmarks and browsing for the cd command
+
+A little tool for the console which enables bookmarks and browsing in
+your shell builtin cd command. Includes Bourne-shell, t?csh and
+Emacs setup files.
+
+Install notes:
+
+1)
+
+  See directory /usr/share/cdargs and source files in your shell
+  startup file. E.g. for ~/.bashrc in this *order*:
+
+      . /usr/share/cdargs/cdargs-lib.sh
+      . /usr/share/cdargs/cdargs-alias.sh
+      . /usr/share/cdargs/cdargs-bash-completion.sh
+
+  There is also Emacs file:
+
+      /usr/share/emacs/site-lisp/cdargs.el
+
+2) Usage as follows. Bookmarks are stored in ~/.cdargs
+
+  ca [LABEL]		   (c)d(a)rgs: bookmark cwd as LABEL or basename of dir
+  cdb <TAB>		   Change to bookmark dir with bash TAB-completion
+  cpb FILELIST LABEL	   Copy list of files to a bookmarked LABEL dir
+  mvb FILELIST LABEL	   Move list of files to a bookmarked LABEL dir
+
+Runtime requirements:
+  cygwin
+  libncurses8
+  bash
+
+Build requirements:
+  cygwin
+  libncurses-devel
+  popt
+
+Canonical homepage:
+  http://www.skamphausen.de/software/cdargs
+  http://packages.debian.org/unstable/cdargs
+
+Canonical download:
+  See above
+
+Version control repository:
+
+Mailing list:
+
+Forum / Wiki:
+
+IRC channel:
+
+Upstream contact:
+  Maintainer: Stefan Kamphausen <mail@skamphausen.de>
+  Bugs: Stefan Kamphausen <mail@skamphausen.de>
+
+License:
+  GPL-2
+
+Language:
+  C
+
+------------------------------------------
+
+Build instructions:
+  unpack cdargs-*-src.tar.bz2
+    if you use setup to install this source package, it will be
+    unpacked under /usr/src automatically
+  cd /usr/src
+  ./cdargs*.sh all
+
+------------------------------------------
+
+Files included in the binary distribution:
+  See content of *.tar.gz
+
+------------------------------------------
+
+Port Notes: Jari Aalto
+- contrib/*.sh files ARE not used, but were the basis of changes.
+  The files installed are in CYGWIN-PATCHES/lib (see
+  install-after.sh).
+- Read CYGWIN-PATCHES/debian/patches/README
+- Split original cdargs-bash.sh into threee files: cdargs-lib.sh,
+  cdargs-alias.sh and cdargs-bash-completion.sh.
+- cdargs-lib.sh: Rename all functions to follow clean
+  namespace _cdargs*. Convert bashism to pure sh. Rename mark() to
+  _cdargs() and merge code from ca(); add option -f and --force.
+  Change CDARGS_SORT and CDARGS_NODUPS into user options.
+- cdargs-alias.sh: Remove duplicate commands like cv, cb which were
+  synonym to 'cdb' (see cdargs-alias.sh).
+- cdargs-bash-completion.sh: check if running under bash before proceeding.
+  Convert long single-line if-case into multiple lines and into pure bash.
+
+----- version 1.35-1 -----
+- Initial release 2008-03-10 Jari Aalto
+
+Cygwin port maintained by: Jari Aalto <jari.aalto@cante.net>
+Copyright (C) 2008 Jari Aalto; Licensed under GPL v2 or later

@@ -1,0 +1,111 @@
+From 82ac3513fb9a2c4a2b420560bb0659a7c68f6fd0 Mon Sep 17 00:00:00 2001
+From: Jari Aalto <jari.aalto@cante.net>
+Date: Tue, 11 Mar 2008 00:49:28 +0200
+Subject: [PATCH] contrib/cdargs.el: Emacs Lisp style checks
+
+---
+ contrib/cdargs.el |   37 +++++++++++++++++++++----------------
+ 1 files changed, 21 insertions(+), 16 deletions(-)
+
+diff --git a/contrib/cdargs.el b/contrib/cdargs.el
+index a1be2b7..7086f81 100644
+--- a/contrib/cdargs.el
++++ b/contrib/cdargs.el
+@@ -1,9 +1,10 @@
+ ;;; cdargs.el --- Directory Bookmarks
+-;; $Id: $
++
++;; This file is not part of Emacs
++
+ ;; Copyright (C) 2003 by Stefan Kamphausen
+ ;; Author: Stefan Kamphausen <mail@skamphausen.de>
+ ;; Keywords: tools, unix
+-;; This file is not part of XEmacs.
+ 
+ ;; This program is free software; you can redistribute it and/or modify it
+ ;; under the terms of the GNU General Public License as published by
+@@ -16,34 +17,40 @@
+ ;; General Public License for more details.
+ 
+ ;; You should have received a copy of the GNU General Public License
+-;; along with this program; see the file COPYING. If not, write to the Free
+-;; Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+-;; 02111-1307, USA.
+-
++;; along with program. If not, write to the
++;; Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
++;; Boston, MA 02110-1301, USA.
+ 
+ ;;; Commentary:
++
+ ;; This is an Emacs front-end to cdargs. It provides a function (cv or
+ ;; cdargs) which uses the same bookmarks list as the terminal program
+ ;; cdargs and lets the user quickly make a directory listed there the
+ ;; current working directory.
+ ;; CDargs is available from
+-;; http://www.skamphausen.de/software/cdargs/
+ ;;
++;; http://www.skamphausen.de/software/cdargs/
++
+ ;;; Installation:
++
+ ;; Since version 1.24 there is a cdargs.el which you just put
+ ;; somewhere where Emacs can find it (see variable load-path) and the
+ ;; require it in your personal init file (may be one of ~/.emacs,
+ ;; ~/.xemacs/init.el ~/.xemacs/my/config/personal.el or something
+-;; else): 
+-;; (require 'cdargs)
++;; else):
++;;
++;;	(require 'cdargs)
++;;	(defalias 'cv 'cdargs)
++;;
+ ;; This defines the function cdargs and an alias cv
+ 
+ ;;; Code:
++
+ (defgroup cdargs nil
+   "Jump to directories quickly."
+   :tag "CDargs"
+-  :link '(url-link :tag "Home Page" 
+-                   "http://www.skamphausen.de/software/cdargs/")
++  :link '(url-link :tag "Home Page"
++                   "http://www.skamphausen.de/software/cdargs")
+   :link '(emacs-commentary-link
+           :tag "Commentary in cdargs.el" "cdargs.el")
+   :prefix "cdargs-"
+@@ -55,7 +62,7 @@
+   :group 'cdargs)
+ 
+ (defcustom cdargs-warped-hook nil
+-  "List of function to run after changing to a directory with cdargs.
++  "List of functions to run after changing to a directory with cdargs.
+ For example it can be useful to add the `desktop-read' function here.
+ This way you can restore a whole session saved earlier with
+ desktop-save without having to start Emacs from a terminal.
+@@ -88,8 +95,6 @@ quick access."
+     (cd dir)
+     (run-hooks 'cdargs-warped-hook)))
+ 
+-(defalias 'cv 'cdargs)
+-
+ (defun cdargs-make-list ()
+   "Return an ALIST with descriptions and paths."
+   (let ((file (expand-file-name cdargs-list-file))
+@@ -113,10 +118,10 @@ quick access."
+     the-list))
+ 
+ (defun cdargs-edit ()
+-  "Simply open the bookmarks file"
++  "Open the bookmarks file."
+   (interactive)
+   (find-file cdargs-list-file))
+ 
+ (provide 'cdargs)
+ 
+-;;; cdargs.el ends here
+\ No newline at end of file
++;;; cdargs.el ends here
+-- 
+1.5.3.8
+

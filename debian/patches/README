@@ -1,0 +1,14 @@
+Debian patch: cdargs_1.35-3-debian-local-changes.diff
+
+The (!) file was extracted, applied. The resulting file was split it
+into parts. See Cygwin README for more information.
+
+The (-) were not used. File cdargs.1 was studied and appropriate patch
+was made to manual page.
+
+   cdargs-1.35/src/Makefile.am
+   cdargs-1.35/src/Makefile.in
+-  cdargs-1.35/doc/cdargs.1
+!  cdargs-1.35/contrib/cdargs-bash.sh
+-  cdargs-1.35/config.guess
+-  cdargs-1.35/config.sub

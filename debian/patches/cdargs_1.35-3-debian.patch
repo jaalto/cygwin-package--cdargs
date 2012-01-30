@@ -1,0 +1,22 @@
+--- cdargs-1.35.orig/src/Makefile.am
++++ cdargs-1.35/src/Makefile.am
+@@ -2,7 +2,7 @@
+ 
+ #AM_CXXFLAGS = -g -ansi -pedantic -Wall -W
+ #AM_CXXFLAGS = -g -ansi -Wall -W
+-AM_CXXFLAGS = -g -Wall -W
++#AM_CXXFLAGS = -g -Wall -W
+ 
+ # CXXFLAGS = -O2
+ # EXTRA_DIST = OOREDESIGN
+--- cdargs-1.35.orig/src/Makefile.in
++++ cdargs-1.35/src/Makefile.in
+@@ -67,7 +67,7 @@
+ 
+ #AM_CXXFLAGS = -g -ansi -pedantic -Wall -W
+ #AM_CXXFLAGS = -g -ansi -Wall -W
+-AM_CXXFLAGS = -g -Wall -W
++#AM_CXXFLAGS = -g -Wall -W
+ 
+ # CXXFLAGS = -O2
+ # EXTRA_DIST = OOREDESIGN
