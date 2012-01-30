@@ -1,2 +1,2 @@
 tag1: cdargs
-  http://packages.debian.org/unstable/cdargs pregexp:orig.tar.gz file:cdargs_1.35.orig.tar.g new: x:
+  http://packages.debian.org/unstable/cdargs pregexp:orig.tar.gz file:cdargs_1.35.orig.tar.gz new: x:
