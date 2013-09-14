@@ -32,6 +32,7 @@ Install notes:
 Runtime requirements:
   cygwin
   libncursesw10
+  libstdc++6
   bash
 
 Build requirements:
