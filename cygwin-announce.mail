@@ -1,6 +1,5 @@
 To: cygwin-announce@cygwin.com
-Subject: Updated: package N.N
-Subject: New package: cdargs 1.35-1 -- Bookmarks and browsing for the cd command
+Subject: Updated: cdargs 1.35-2 -- Bookmarks and browsing for the cd command
 
 PACKAGE DESCRIPTION
 ===================
@@ -15,6 +14,7 @@ Emacs setup files.
 CHANGES SINCE LAST RELEASE
 ==========================
 
+Link with libncursesw10
 See /usr/share/doc/cdargs-*/ChangeLog
 
 INSTALL OR UPGRADE NOTES

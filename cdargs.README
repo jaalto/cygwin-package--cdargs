@@ -76,7 +76,7 @@ Build instructions:
 ------------------------------------------
 
 Files included in the binary distribution:
-  See content of *.tar.gz
+  See Cygwin package archive
 
 ------------------------------------------
 
@@ -96,8 +96,12 @@ Port Notes: Jari Aalto
 - cdargs-bash-completion.sh: check if running under bash before proceeding.
   Convert long single-line if-case into multiple lines and into pure bash.
 
+----- version 1.35-2 -----
+- Cygwin package update: 2013-09-14 Jari Aalto
+- Link with libncursesw10
+
 ----- version 1.35-1 -----
 - Initial release 2008-03-10 Jari Aalto
 
-Cygwin port maintained by: Jari Aalto <jari.aalto@cante.net>
+Cygwin port maintained by: user <jari.aalto@cante.net>
 Copyright (C) 2008-2013 Jari Aalto; Licensed under GPL v2 or later
