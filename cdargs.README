@@ -31,7 +31,7 @@ Install notes:
 
 Runtime requirements:
   cygwin
-  libncurses8
+  libncursesw10
   bash
 
 Build requirements:
@@ -84,7 +84,7 @@ Port Notes: Jari Aalto
 - contrib/*.sh files ARE not used, but were the basis of changes.
   The files installed are in CYGWIN-PATCHES/lib (see
   install-after.sh).
-- Read CYGWIN-PATCHES/debian/patches/README
+- Read CYGWIN-PATCHES/patches/debian/README
 - Split original cdargs-bash.sh into threee files: cdargs-lib.sh,
   cdargs-alias.sh and cdargs-bash-completion.sh.
 - cdargs-lib.sh: Rename all functions to follow clean
@@ -100,4 +100,4 @@ Port Notes: Jari Aalto
 - Initial release 2008-03-10 Jari Aalto
 
 Cygwin port maintained by: Jari Aalto <jari.aalto@cante.net>
-Copyright (C) 2008 Jari Aalto; Licensed under GPL v2 or later
+Copyright (C) 2008-2013 Jari Aalto; Licensed under GPL v2 or later
